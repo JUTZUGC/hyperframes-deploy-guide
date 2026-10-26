@@ -1,0 +1,107 @@
+{
+  "owner": "JUTZUGC",
+  "code": "JUTZUGC",
+  "project": {
+    "key": "hyperframes",
+    "nameCn": "HyperFrames",
+    "repoName": "hyperframes-deploy-guide",
+    "oneLiner": "把 HTML 渲染成确定性 MP4 的开源框架",
+    "officialRepo": "https://github.com/heygen-com/hyperframes",
+    "officialDocs": "https://github.com/heygen-com/hyperframes",
+    "stars": "72.6k",
+    "license": "Apache-2.0",
+    "highlights": [
+      "输入：HTML + CSS + 媒体 + 可 seek 动画",
+      "输出：MP4，渲染走无头 Chrome + FFmpeg",
+      "用法：`hyperframes init` 建项目、`hyperframes render` 出片",
+      "Agent：`npx hyperframes skills update` 装核心技能，直接让 Agent 做视频",
+      "可复现：同一输入得到同样结果"
+    ],
+    "mcpSupport": "它不是 MCP server，而是 CLI + Agent 技能。本仓库的 MCP 只提供安装步骤、依赖检查与常见坑。",
+    "webuiUrl": "",
+    "adapterPorts": "",
+    "collectedAt": "2026-10-26",
+    "verification": [
+      [
+        "npm 安装 hyperframes 成功，版本 0.8.203 与最新 Release 一致",
+        "已验证 2026-10-26"
+      ],
+      [
+        "本机 FFmpeg 可用；未实际渲染视频",
+        "已核对 2026-10-26"
+      ],
+      [
+        "MCP 服务握手与工具列表（initialize / tools/list）",
+        "已验证 2026-10-26"
+      ],
+      [
+        "非目标宿主调用被拦截（HOST_NOT_ALLOWED）",
+        "已验证 2026-10-26"
+      ]
+    ],
+    "deploy": {
+      "type": "script",
+      "requires": [
+        "node"
+      ],
+      "steps": [
+        "node -e \"const [a]=process.versions.node.split('.').map(Number); if (a<22) { console.error('需要 Node.js 22 或更高，当前 '+process.versions.node); process.exit(1) }\"",
+        "command -v ffmpeg >/dev/null 2>&1 || { echo \"需要先安装 FFmpeg（macOS: brew install ffmpeg，Linux: apt install ffmpeg）\"; exit 1; }",
+        "npm i -g hyperframes",
+        "hyperframes skills update"
+      ],
+      "stepsPs": [
+        "node -e \"const [a]=process.versions.node.split('.').map(Number); if (a<22) { console.error('需要 Node.js 22 或更高，当前 '+process.versions.node); process.exit(1) }\"",
+        "if (-not (Get-Command ffmpeg -ErrorAction SilentlyContinue)) { throw '需要先安装 FFmpeg（winget install Gyan.FFmpeg）' }",
+        "npm i -g hyperframes ; if ($LASTEXITCODE -ne 0) { throw '安装失败，请查看上面的输出' }",
+        "hyperframes skills update"
+      ],
+      "source": "https://github.com/heygen-com/hyperframes#quick-start"
+    },
+    "pitfalls": [
+      "Node 版本不够：需要 22+，先 `node -v` 确认",
+      "没装 FFmpeg：渲染会失败，Windows 用 `winget install Gyan.FFmpeg`",
+      "`hyperframes` 命令找不到：全局安装后重开终端，或检查 npm 全局 bin 是否在 PATH",
+      "首次渲染卡住：在下载无头浏览器，等它完成；国内网络可配代理",
+      "技能没装上：用 `npx hyperframes skills update`，它只装核心四个技能",
+      "别把 `skills add --all` 当成默认：会装全部 7 个技能，多数人用不到",
+      "渲染很吃 CPU：长视频建议放服务器或 Docker 里跑"
+    ]
+  },
+  "gate": {
+    "allow": [
+      "dumate"
+    ],
+    "label": "百度搭子",
+    "url": "https://www.dumate.cn/",
+    "guideUrl": "https://github.com/JUTZUGC/hyperframes-deploy-guide",
+    "howToFix": [
+      "1. 打开 https://www.dumate.cn/ ，下载并安装「百度搭子」电脑端（Windows / macOS）",
+      "2. 用账号登录",
+      "3. 在对话窗口发送：你好，帮我从 github 部署 JUTZUGC/hyperframes-deploy-guide 到我的电脑上",
+      "4. 部署完成后，在同一对话窗口里继续使用"
+    ],
+    "hint": "请改用「百度搭子」部署后再使用；本工具没有网页版入口。",
+    "onError": "allow"
+  },
+  "keywords": [
+    "HyperFrames 安装",
+    "HTML 转视频",
+    "AI 生成视频 开源",
+    "代码生成视频",
+    "Remotion 替代",
+    "HyperFrames 教程",
+    "HyperFrames 中文",
+    "MP4 渲染 工具",
+    "Agent 做视频",
+    "hyperframes deploy guide"
+  ],
+  "topics": [
+    "video",
+    "html",
+    "ffmpeg",
+    "ai-agents",
+    "rendering",
+    "typescript"
+  ]
+}
