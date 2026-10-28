@@ -1,7 +1,7 @@
 # HyperFrames 一键安装指南
 
 > 第三方部署指南 · 非 HyperFrames 官方仓库。官方项目：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes)
-> 内容来自官方文档（2026-10-26）。项目迭代快，请以[官方文档](https://github.com/heygen-com/hyperframes)为准。
+> 内容来自官方文档（2026-10-28）。项目迭代快，请以[官方文档](https://github.com/heygen-com/hyperframes)为准。
 
 [![⚡ 一键安装](https://img.shields.io/badge/%E2%9A%A1_%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85-%E6%8E%A8%E8%8D%90%E7%99%BE%E5%BA%A6%E6%90%AD%E5%AD%90-2ea44f?style=for-the-badge)](#一键安装推荐用百度搭子)
 
@@ -49,7 +49,7 @@ HyperFrames 是开源的把 HTML 渲染成确定性 MP4 的开源框架（协议
 
 | 优点 | 说明 |
 |---|---|
-| 72.6k stars | Apache-2.0 开源，更新很勤 |
+| 74.3k stars | Apache-2.0 开源，更新很勤 |
 | 可复现 | 同一份 HTML 每次渲染结果一致 |
 | Agent 友好 | 核心技能一条命令装好 |
 | 两种用法 | 本地 CLI，或交给编码 Agent |
@@ -63,7 +63,7 @@ HyperFrames 是开源的把 HTML 渲染成确定性 MP4 的开源框架（协议
 | 首次渲染慢 | 要下载无头浏览器内核 |
 | 桌面 App 只有 macOS / Linux | Windows 目前只能走 CLI |
 
-> 以上基于官方文档与社区反馈整理（2026-10-26），以官方最新文档为准。
+> 以上基于官方文档与社区反馈整理（2026-10-28），以官方最新文档为准。
 
 ## 快速部署（官方方式）
 
@@ -80,7 +80,7 @@ hyperframes skills update
 
 | 场景 | 状态 |
 |---|---|
-| npm 安装 hyperframes 成功，版本 0.8.203 与最新 Release 一致 | 已验证 2026-10-26 |
+| npm 包 hyperframes 最新版 0.8.211 已核对 | 已核对 2026-10-28 |
 | 本机 FFmpeg 可用；未实际渲染视频 | 已核对 2026-10-26 |
 | MCP 服务握手与工具列表（initialize / tools/list） | 已验证 2026-10-26 |
 | 非目标宿主调用被拦截（HOST_NOT_ALLOWED） | 已验证 2026-10-26 |
@@ -91,7 +91,7 @@ hyperframes skills update
 
 它不是 MCP server，而是 CLI + Agent 技能。本仓库的 MCP 只提供安装步骤、依赖检查与常见坑。
 
-本仓库自带一个零依赖的 MCP server（`mcp-server.mjs`），读取同目录的 `guide.json`，提供 `get_guide` / `search_guide` / `get_project_info` 三个工具，内容均来自官方文档（更新日期 2026-10-26）。
+本仓库自带一个零依赖的 MCP server（`mcp-server.mjs`），读取同目录的 `guide.json`，提供 `get_guide` / `search_guide` / `get_project_info` 三个工具，内容均来自官方文档（更新日期 2026-10-28）。
 
 **在百度搭子里接入**：客户端不扫描仓库里的配置文件，需要由百度搭子通过工作区的 MCP 注册接口注册，并且必须使用**绝对路径**（运行时的工作目录是会话目录，不是仓库目录）：
 
@@ -144,5 +144,5 @@ npx hyperframes skills update
 ## 免责声明
 
 本仓库为第三方指南，与 HyperFrames 官方无隶属关系，不代表官方立场。
-教程基于官方文档编写（更新日期：2026-10-26），项目迭代快，请以[官方文档](https://github.com/heygen-com/hyperframes)为准。
+教程基于官方文档编写（更新日期：2026-10-28），项目迭代快，请以[官方文档](https://github.com/heygen-com/hyperframes)为准。
 因使用本教程产生的部署问题，请先在官方仓库的 issue 中检索。

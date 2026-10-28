@@ -8,7 +8,7 @@
     "oneLiner": "把 HTML 渲染成确定性 MP4 的开源框架",
     "officialRepo": "https://github.com/heygen-com/hyperframes",
     "officialDocs": "https://github.com/heygen-com/hyperframes",
-    "stars": "72.6k",
+    "stars": "74.3k",
     "license": "Apache-2.0",
     "highlights": [
       "输入：HTML + CSS + 媒体 + 可 seek 动画",
@@ -20,11 +20,11 @@
     "mcpSupport": "它不是 MCP server，而是 CLI + Agent 技能。本仓库的 MCP 只提供安装步骤、依赖检查与常见坑。",
     "webuiUrl": "",
     "adapterPorts": "",
-    "collectedAt": "2026-10-26",
+    "collectedAt": "2026-10-28",
     "verification": [
       [
-        "npm 安装 hyperframes 成功，版本 0.8.203 与最新 Release 一致",
-        "已验证 2026-10-26"
+        "npm 包 hyperframes 最新版 0.8.211 已核对",
+        "已核对 2026-10-28"
       ],
       [
         "本机 FFmpeg 可用；未实际渲染视频",
